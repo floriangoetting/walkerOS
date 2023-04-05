@@ -27,6 +27,7 @@ jobs:
           - google-gtm
           - meta-pixel
           - plausible
+          - snowplow
     name: destination ${{ matrix.destination }}
     defaults:
       run:
