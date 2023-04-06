@@ -10,6 +10,8 @@ describe('Destination Snowplow', () => {
   const mockFn = jest.fn(); //.mockImplementation(console.log);
 
   const event = 'entity action';
+  const appId = 'my-app-id';
+  const url = 'https://collector.mysite.com';
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -29,7 +31,7 @@ describe('Destination Snowplow', () => {
 
   test('init', () => {
     destination.config = {
-      custom: {},
+      custom: { appId, url },
     };
     elbwalker.push('walker destination', destination);
 

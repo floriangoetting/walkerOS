@@ -22,13 +22,8 @@ const config /* : DestinationSnowplow.Config */ = {
   // init: true, // Skip the initialisation
   // loadScript: true, // Load additional required scripts on init
   mapping: {
-    '*': {
-      '*': {
-        custom: {
-          // CustomEventConfig
-        },
-      },
-    },
+    '*': { '*': { custom: {} } }, // Process all events
+    page: { view: { custom: { pageview: true } } },
   },
 };
 ```

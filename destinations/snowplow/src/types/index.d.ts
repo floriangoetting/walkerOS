@@ -1,4 +1,5 @@
 import { WebDestination } from '@elbwalker/walker.js';
+import { BrowserTracker } from '@snowplow/browser-tracker';
 
 export declare namespace DestinationSnowplow {
   interface Function
@@ -7,10 +8,12 @@ export declare namespace DestinationSnowplow {
   type Config = WebDestination.Config<CustomConfig, CustomEventConfig>;
 
   interface CustomConfig {
-    // Snowplows custom settings
+    appId: string;
+    tracker?: BrowserTracker;
+    url: string;
   }
 
   interface CustomEventConfig {
-    // Custom destination event mapping properties
+    pageview?: boolean;
   }
 }
